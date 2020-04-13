@@ -1,0 +1,336 @@
+@charset "UTF-8"; 
+@import url('https://fonts.googleapis.com/css2?family=Overpass&display=swap');
+/* font-family: 'Overpass', sans-serif; */
+
+
+/********************************/
+/******  Hidden Elements *******/
+
+.countrySelectionDiv {
+    display: none;
+}
+
+
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.background {
+    position: fixed;
+    left: 0;
+    top: 0;
+    min-width: 100%;
+    min-height: 100%;
+    background: rgb(9,9,121);
+    background: linear-gradient(0deg, rgba(9,9,121,1) 0%, rgba(0,185,255,1) 100%);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: .7;
+    overflow: hidden;
+    z-index: -10;
+}
+
+.giantCont {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 5% 15%;
+    padding: 2% 10% 5% 10%;
+    background-color: white;
+    border-radius: 20px 20px 20px 20px;
+    -moz-border-radius: 20px 20px 20px 20px;
+    -webkit-border-radius: 20px 20px 20px 20px;
+    box-shadow: 0px 3px 5px;
+}
+
+.MainTitle {
+    text-align: center;
+}
+
+.calc {
+    color: #152E4A;
+}
+
+.more {
+    font-weight: 300;
+}
+
+.netmoreLogo {
+    width: 120px;
+    height: 105px;
+    object-fit: cover;
+}
+
+.MainTitle h1 {
+    margin: 0 0 20px 0;
+    font-size: 45px;
+}
+
+.MainTitle a, .MainTitle a:visited, .MainTitle a:hover {
+    text-decoration: none;
+    color: #5F9EC7;
+}
+
+.chosenCounrtyWarning {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    margin: 30px 0;
+}
+
+.searchMethods {
+    text-align: center;
+}
+
+.label, .resultsTitle, .productTitle, .productInfoListTitle, .specificationTitle, .calcLabels, .header {
+    font-family: 'Overpass', sans-serif;
+    font-weight: 500;
+    font-size: 22px;
+    margin-right: 10px;
+    color: rgb(69, 126, 153);
+}
+
+.changeCountryButton {
+    padding: 14px;
+    font-size: 17px;
+    border-radius: 30px;
+    width: 100px;
+    color: white;
+    background: rgb(25,45,78);
+    background: linear-gradient(180deg, rgb(60, 112, 198) 50%, rgb(0, 185, 255) 100%);
+    outline: none;
+    -webkit-appearance: none;
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom-style: hidden;
+    transition: all .2s ease-in-out;
+}
+
+.searchBarCont {
+    margin-bottom: 30px;
+}
+
+.searchBarInput, .entryValue {
+    padding: 13px;
+    font-size: 17px;
+    border-radius: 30px;
+    width: 395px;
+    box-shadow: 0px 0px 4px gray;
+    -webkit-appearance: none;
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom-style: hidden;
+}
+
+.searchBarButton, .calcButton {
+    padding: 14px;
+    font-size: 17px;
+    border-radius: 30px;
+    margin-left: -144px;
+    width: 140px;
+    color: white;
+    background: rgb(25,45,78);
+    background: linear-gradient(180deg, rgb(60, 112, 198) 50%, rgb(0, 185, 255) 100%);
+    outline: none;
+    -webkit-appearance: none;
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom-style: hidden;
+    transition: all .2s ease-in-out;
+    
+}
+
+.searchBarButton:hover, .calcButton:hover, .changeCountryButton:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    transition: all .2s ease-in-out;
+}
+
+.categoryOptions, .secondDropdown, .paymentMethod, .countryOptions {
+    text-align: center;
+    padding: 13px;
+    font-size: 17px;
+    border-radius: 30px;
+    width: 395px;
+    box-shadow: 0px 0px 4px gray;
+    -webkit-appearance: none;
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom-style: hidden;
+    margin-bottom: 40px;
+}
+
+.resultsCont {
+    padding: 30px;
+    transition: all .3s ease-in-out;
+    background-color: rgb(245, 245, 245);
+    height: 500px;
+    overflow: auto;
+    box-shadow: 0px 0px 15px 0px inset;
+    border-radius: 15px;
+}
+
+.resultsListItem {
+    list-style-type: none;
+    margin: 40px 0;
+    border-bottom: 4px solid white;
+}
+
+.resultsListItem h4 {
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+
+}
+
+.resultsListItem h4:hover {
+    transform: scale(1.04);
+    transform: translate(2%);
+    transition: all .2s ease-in-out;
+}
+
+.productHighlights {
+    font-size: 18px;   
+}
+
+.price {
+    text-align: right;
+    font-weight: 700;
+    font-size: 25px;
+    margin-right: 10%;
+}
+
+.productInfoListCont {
+    background: aliceblue;
+    box-shadow: 0px 0px 10px black inset;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+.productInfoListTitle {
+    margin: 60px 0;
+    text-align: center;
+}
+
+.specificationItem {
+    list-style-type: none;
+    width: max-content;
+    margin: 0 auto;
+}
+
+.specificationItem label, .specificationItem p {
+    padding: 19px;
+    width: max-content;
+    text-align: center;
+}
+
+.specificationItem p {
+    font-size: 20px;
+}
+
+.specification {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-content: center;
+    align-items: center;
+}
+
+.specificationDetail {
+    width: auto !important;
+}
+
+.calcCont {
+    margin: 70px 0 0 0;
+    text-align: center;
+}
+
+.minValue {
+    position: absolute;
+    font-size: 25px;
+    margin-top: 7px;
+    margin-left: 16px;
+}
+
+.minValueRequired, .priceExceeded {
+    color: red;
+    font-size: 20px;
+    text-align: center;
+}
+
+.calcTableCont {
+    position: absolute;
+    background-color: #c8d7e6;
+    width: 1000px;
+    height: auto;
+    z-index: 50;
+    top: 64%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 20px 20px 20px 20px;
+    -moz-border-radius: 20px 20px 20px 20px;
+    -webkit-border-radius: 20px 20px 20px 20px;
+    box-shadow: 0px 2px 2px;
+    padding: 5% 0px;
+}
+
+.calcTable {
+    font-size: 25px;
+}
+
+.closingIcon {
+    font-size: 81px;
+    position: absolute;
+    top: 30px;
+    right: 75px;
+    cursor: pointer;
+    color: rgb(69, 126, 153);
+}
+
+.column {
+    text-align: center;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    height: 500px;
+    overflow: auto;
+}
+
+.headerDiv {
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#parcelsValue {
+    margin-left: -40px;
+}
+
+.header {
+   /* width: max-content; */
+}
+
+.rows {
+    text-align: center;
+    margin: 3px 0;
+    width: 100%;
+    background-color: white;
+    padding: 15px 30px;
+    border-radius: 30px;
+}
+
+.rowsCont {
+    width: 165px;
+}
+
+.parcelsNumberCont, .parcelsValueCont, .totalValueCont {
+    text-align: center !important;
+}
