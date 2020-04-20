@@ -337,3 +337,143 @@ body, html {
 .parcelsNumberCont, .parcelsValueCont, .totalValueCont {
     text-align: center !important;
 }
+
+@media screen and (max-width: 870px) {
+
+    .giantCont {
+        padding: 2% 7% 5% 7%;
+        margin-bottom: 10em;
+    }
+
+    .MainTitle h1 {
+        font-size: 2em;
+    }
+
+    .netmoreLogo {
+        width: 5em;
+        height: auto;
+    }
+
+    .MainTitle, .chosenCounrtyWarning, .searchBarCont, .categoryCont {
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .countryOptions {
+        width: auto;
+    }
+
+    .label {
+        margin-right: 0;
+    }
+    .searchBarCont > * {
+        margin: .5em 0;
+    }
+
+    .searchBarInput, .categoryOptions, .secondDropdown, .paymentMethod {
+        width: 12em;
+    }
+
+    .searchBarButton {
+        margin-left: 0;
+    }
+
+    .resultsCont {
+        padding: 10px;
+    }
+
+    .resultsTitle, .resultsListItem h4, .productHighlights, .price {
+        text-align: center;
+        margin-right: 0;
+    }
+
+    .resultsList {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    .productInfoListTitle {
+        margin: 25px 0;
+        font-size: 19px;
+    }
+
+    .specification {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        padding: 0;
+        margin: 0;
+        align-items: flex-start;
+    }
+
+    .specificationTitle {
+        padding: 0 !important;
+        font-size: 17px;
+    }
+
+    .specificationItem {
+        margin: 0;
+        width: auto;
+    }
+
+    .specificationDetail {
+        margin: 0;
+        font-size: 16px !important;
+    }
+
+    .specificationDetail {
+        text-align: left !important;
+        padding: 15px !important;
+    }
+
+    .calcCont {
+        display: flex !important;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-wrap: wrap;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: auto;
+        padding: .5em 0;
+        margin: 0;
+        background-color: white;
+        -webkit-box-shadow: 0px -2px 17px -3px rgba(0,0,0,0.79);
+        -moz-box-shadow: 0px -2px 17px -3px rgba(0,0,0,0.79);
+        box-shadow: 0px -2px 17px -3px rgba(0,0,0,0.79);
+    }
+
+    .calcCont > * {
+        margin-bottom: .5em !important;
+    }
+
+    .calcLabels {
+        display: none;
+        font-size: 19px;
+    }
+
+    .paymentMethod {
+        width: min-content;
+        padding: .7em;
+        margin-bottom: .3em;
+    }
+
+    .entryValue {
+        width: 9em;
+        margin: 0;
+    }
+
+    .minValue {
+        position: relative;
+        font-size: 20px;
+
+    }
+
+    .calcButton {
+        margin-left: 0;
+    }
+}
