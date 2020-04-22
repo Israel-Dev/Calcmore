@@ -10,21 +10,13 @@
     display: none;
 }
 
-.paymentTableBackground {
-    position: fixed;
-    background-color: #ffffffc9;
-    min-width: 100%;
-    min-height: 100%;
-    top: 0;
-    display: none;
-}
-
 .loadingCont {
     position: fixed;
     min-width: 100%;
     min-height: 100%;
     background-color: #ffffffc9;
     top: 0;
+    z-index: 50;
 }
 
 .loadingIcon {
