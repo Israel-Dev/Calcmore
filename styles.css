@@ -31,8 +31,8 @@
     position: fixed;
     left: 50%;
     top: 50%;
-    width: 5em;
-    height: 5em;
+    width: 3.5em;
+    height: 3.5em;
     animation: rotate infinite 2s;
 }
 
@@ -82,10 +82,12 @@ body, html {
 }
 
 .calc {
+    font-family: 'Ubuntu', sans-serif;
     color: #152E4A;
 }
 
 .more {
+    font-family: 'Ubuntu', sans-serif;
     font-weight: 300;
 }
 
@@ -330,54 +332,8 @@ body, html {
     padding: 5% 0px;
 }
 
-.calcTable {
-    font-size: 25px;
-}
-
-.closingIcon {
-    font-size: 81px;
-    position: absolute;
-    top: 30px;
-    right: 75px;
-    cursor: pointer;
-    color: rgb(69, 126, 153);
-}
-
-.column {
+.table td, .table th {
     text-align: center;
-    width: 100%;
-    display: flex;
-    justify-content: space-evenly;
-    height: 500px;
-    overflow: auto;
-}
-
-.headerDiv {
-    width: 100%;
-    text-align: center;
-    display: flex;
-    justify-content: space-evenly;
-}
-
-#parcelsValue {
-    margin-left: -40px;
-}
-
-.rows {
-    text-align: center;
-    margin: 3px 0;
-    width: 100%;
-    background-color: white;
-    padding: 15px 30px;
-    border-radius: 30px;
-}
-
-.rowsCont {
-    width: 165px;
-}
-
-.parcelsNumberCont, .parcelsValueCont, .totalValueCont {
-    text-align: center !important;
 }
 
 @media screen and (max-width: 870px) {
