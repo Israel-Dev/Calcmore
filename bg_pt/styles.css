@@ -1,0 +1,508 @@
+@charset "UTF-8"; 
+@import url('https://fonts.googleapis.com/css2?family=Overpass&display=swap');
+/* font-family: 'Overpass', sans-serif; */
+
+
+/********************************/
+/******  Hidden Elements *******/
+
+.countrySelectionDiv, .productInfoListCont, .calcCont, .calcTableCont  {
+    display: none;
+}
+
+.loadingCont {
+    position: fixed;
+    min-width: 100%;
+    min-height: 100%;
+    background-color: #ffffffc9;
+    top: 0;
+    z-index: 50;
+}
+
+.loadingIcon {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    width: 3.5em;
+    height: 3.5em;
+    animation: rotate infinite 2s;
+}
+
+@keyframes rotate {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+body, html {
+    height: auto;
+    margin: 0;
+    padding: 0;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.background {
+    position: fixed;
+    left: 0;
+    top: 0;
+    min-width: 100%;
+    min-height: 100%;
+    background: rgb(9,9,121);
+    background: linear-gradient(0deg, rgba(9,9,121,1) 0%, rgba(0,185,255,1) 100%);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: .7;
+    overflow: hidden;
+    z-index: -10;
+}
+
+.giantCont {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 5% 10%;
+    padding: 2% 10% 5% 10%;
+    background-color: white;
+    border-radius: 20px 20px 20px 20px;
+    -moz-border-radius: 20px 20px 20px 20px;
+    -webkit-border-radius: 20px 20px 20px 20px;
+    box-shadow: 0px 3px 5px;
+}
+
+.MainTitle {
+    text-align: center;
+}
+
+.calc {
+    font-family: 'Ubuntu', sans-serif;
+    color: #152E4A;
+}
+
+.more {
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 300;
+}
+
+.netmoreLogo {
+    width: 120px;
+    height: 105px;
+    object-fit: cover;
+}
+
+.MainTitle h1 {
+    margin: 0 0 20px 0;
+    font-size: 45px;
+}
+
+.MainTitle a, .MainTitle a:visited, .MainTitle a:hover {
+    text-decoration: none;
+    color: #5F9EC7;
+}
+
+.chosenCounrtyWarning {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: baseline;
+    margin: 0 0 30px 0;
+}
+
+.searchMethods {
+    text-align: center;
+}
+
+.label, .resultsTitle, .productTitle, .productInfoListTitle, .specificationTitle, .calcLabels, .header {
+    font-family: 'Overpass', sans-serif;
+    font-weight: 500;
+    font-size: 22px;
+    margin-right: 10px;
+    color: rgb(69, 126, 153);
+}
+
+.changeCountryButton {
+    padding: 14px;
+    font-size: 17px;
+    border-radius: 30px;
+    width: 100px;
+    color: white;
+    background: rgb(25,45,78);
+    background: linear-gradient(180deg, rgb(60, 112, 198) 50%, rgb(0, 185, 255) 100%);
+    outline: none;
+    -webkit-appearance: none;
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom-style: hidden;
+    transition: all .2s ease-in-out;
+}
+
+.countryName {
+    font-size: 17px;
+}
+.searchBarCont {
+    margin-bottom: 30px;
+}
+
+.searchBarInput, .entryValue {
+    padding: 13px;
+    font-size: 17px;
+    border-radius: 30px;
+    width: 395px;
+    box-shadow: 0px 0px 4px gray;
+    -webkit-appearance: none;
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom-style: hidden;
+}
+
+.searchBarButton, .calcButton {
+    padding: 14px;
+    font-size: 17px;
+    border-radius: 30px;
+    margin-left: -144px;
+    width: 140px;
+    color: white;
+    background: rgb(25,45,78);
+    background: linear-gradient(180deg, rgb(60, 112, 198) 50%, rgb(0, 185, 255) 100%);
+    outline: none;
+    -webkit-appearance: none;
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom-style: hidden;
+    transition: all .2s ease-in-out;
+    
+}
+
+.searchBarButton:hover, .calcButton:hover, .changeCountryButton:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    transition: all .2s ease-in-out;
+}
+
+.categoryOptions, .secondDropdown, .paymentMethod, .countryOptions {
+    text-align: center;
+    padding: 13px;
+    font-size: 17px;
+    border-radius: 30px;
+    width: 395px;
+    box-shadow: 0px 0px 4px gray;
+    -webkit-appearance: none;
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom-style: hidden;
+    margin-bottom: 30px;
+}
+
+.resultsCont {
+    padding: 30px;
+    transition: all .3s ease-in-out;
+    background-color: rgb(245, 245, 245);
+    height: 500px;
+    overflow: auto;
+    box-shadow: 0px 0px 15px 0px inset;
+    border-radius: 15px;
+}
+
+.resultsListItem {
+    list-style-type: none;
+    margin: 40px 0;
+    border-bottom: 4px solid white;
+}
+
+.resultsListItem h4 {
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+
+}
+
+.resultsListItem h4:hover {
+    transform: scale(1.04);
+    transform: translate(2%);
+    transition: all .2s ease-in-out;
+}
+
+.productHighlights {
+    font-size: 18px;   
+}
+
+.price {
+    text-align: right;
+    font-weight: 700;
+    font-size: 25px;
+    margin-right: 10%;
+}
+
+.productInfoListCont {
+    background: aliceblue;
+    box-shadow: 0px 0px 10px black inset;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+.productInfoListTitle {
+    margin: 60px 0;
+    text-align: center;
+}
+
+.specificationItem {
+    list-style-type: none;
+    width: max-content;
+    margin: 0 auto;
+}
+
+.specificationItem label, .specificationItem p {
+    padding: 19px;
+    width: max-content;
+    text-align: center;
+}
+
+.specificationItem p {
+    font-size: 20px;
+}
+
+.specification {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-content: center;
+    align-items: center;
+}
+
+.specificationDetail {
+    width: auto !important;
+}
+
+.calcCont {
+    margin: 70px 0 0 0;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+    text-align: center;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+.calcCont > * {
+    margin-right: 1em;
+}
+
+.paymentMethod, .entryValue {
+    width: 10em;
+}
+
+.minValue {
+    font-size: 25px;
+    margin-top: 7px;
+    margin-left: 16px;
+}
+
+.calcButton {
+    margin-left: 0;
+}
+
+.minValueRequired, .priceExceeded {
+    color: red;
+    font-size: 20px;
+    text-align: center;
+}
+
+.calcTableCont {
+    position: absolute;
+    background-color: #c8d7e6;
+    width: 1000px;
+    height: auto;
+    z-index: 50;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 20px 20px 20px 20px;
+    -moz-border-radius: 20px 20px 20px 20px;
+    -webkit-border-radius: 20px 20px 20px 20px;
+    box-shadow: 0px 2px 2px;
+    padding: 5% 0px;
+}
+
+.table td, .table th {
+    text-align: center;
+}
+
+@media screen and (max-width: 870px) {
+    .giantCont {
+        padding: 2% 7% 5% 7%;
+        margin-bottom: 14em;
+    }
+
+    .MainTitle h1 {
+        font-size: 2em;
+    }
+
+    .netmoreLogo {
+        width: 5em;
+        height: auto;
+    }
+
+    .MainTitle, .chosenCounrtyWarning, .searchBarCont, .categoryCont {
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .countryOptions {
+        width: auto;
+    }
+
+    .label {
+        margin-right: 0;
+    }
+    .searchBarCont > * {
+        margin: .5em 0;
+    }
+
+    .searchBarInput, .categoryOptions, .secondDropdown, .paymentMethod {
+        width: 12em;
+    }
+
+    .searchBarButton {
+        margin-left: 0;
+    }
+
+    .resultsCont {
+        padding: 10px;
+    }
+
+    .resultsTitle, .resultsListItem h4, .productHighlights, .price {
+        text-align: center;
+        margin-right: 0;
+    }
+
+    .resultsList {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    .productInfoListTitle {
+        margin: 25px 0;
+        font-size: 19px;
+    }
+
+    .specification {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        padding: 0;
+        margin: 0;
+        align-items: flex-start;
+    }
+
+    .specificationTitle {
+        padding: 0 !important;
+        font-size: 17px;
+    }
+
+    .specificationItem {
+        margin: 0;
+        width: auto;
+    }
+
+    .specificationDetail {
+        margin: 0;
+        font-size: 16px !important;
+    }
+
+    .specificationDetail {
+        text-align: left !important;
+        padding: 15px !important;
+    }
+
+    .calcCont {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-wrap: wrap;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: auto;
+        padding: .5em 0;
+        margin: 0;
+        background-color: white;
+        -webkit-box-shadow: 0px -2px 17px -3px rgba(0,0,0,0.79);
+        -moz-box-shadow: 0px -2px 17px -3px rgba(0,0,0,0.79);
+        box-shadow: 0px -2px 17px -3px rgba(0,0,0,0.79);
+    }
+
+    .calcCont > * {
+        margin-bottom: .5em !important;
+    }
+
+    .calcLabels {
+        display: none;
+        font-size: 19px;
+    }
+
+    .paymentMethod {
+        width: min-content;
+        padding: .7em;
+        margin-bottom: .3em;
+    }
+
+    .entryValue {
+        width: 9em;
+        margin: 0;
+    }
+
+    .minValue {
+        position: relative;
+        font-size: 20px;
+
+    }
+
+    .calcButton {
+        margin-left: 0;
+    }
+
+    .calcTableCont {
+        padding: 3em;
+        position: absolute;
+        min-height: 100%;
+        min-width: 100%;
+        width: 75%;
+    }
+
+    .calcTable {
+        margin-top: 0;
+    }
+
+    .headerDiv {
+        justify-content: space-between;
+    }
+
+    .header {
+        font-size: 15px;
+        width: min-content;
+    }
+
+    .closingIcon {
+        font-size: 60px;
+        position: absolute;
+        margin-right: 60%;
+        margin-top: 20%;
+    }
+
+    .rows {
+        width: max-content;
+    }
+
+    .rowsCont {
+        font-size: 17px;
+    }
+
+    .column {
+        justify-content: center;
+    }
+}
